@@ -1,6 +1,0 @@
-name: test
-on: pull_request
-
-jobs:
-    pre-buid:
-        uses: ./pre-build@main
