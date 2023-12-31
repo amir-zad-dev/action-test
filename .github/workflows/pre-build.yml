@@ -1,0 +1,26 @@
+name: pre-build
+on: pull_request
+
+jobs:
+    test:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: 18
+
+    install_dependecies:
+      runs-on: ubuntu-latest
+      name: Install Dependencies
+      needs: test
+      steps:
+           - name: install
+             run: |
+              ls -lah
+              npm i -ci
+
