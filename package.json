@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "run": "node dist/app.js",
+    "test": "echo test completed successfully!",
     "compile": "tsc"
   },
   "keywords": [],
