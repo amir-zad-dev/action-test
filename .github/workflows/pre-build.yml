@@ -3,7 +3,7 @@ on: push
 
 jobs:
     job1:
-        name: Build
+        name: Setup Node.Js
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
@@ -25,6 +25,17 @@ jobs:
           - name: install
             run: |
               echo "***Job-2:"
-              ls -lah
               npm i -ci
+              ls -lah
+    job3:
+      name: Install Dependencies
+      runs-on: ubuntu-latest
+      needs: [job1, job2]
+      steps:
+          - name: Checkout
+            uses: actions/checkout@v3   
+          - name: install
+            run: |
+              echo "^^^^Job-3:"
+              ls -lah
 
