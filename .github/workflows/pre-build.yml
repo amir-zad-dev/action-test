@@ -28,6 +28,7 @@ jobs:
                 mv ./dist ./app-code
                 ls -lah
                 ls ./app-code -lah
+                node ./app-code/dist/app.js
             
             # - name: Upload Artifacts
             #   uses: actions/upload-artifact@v4
