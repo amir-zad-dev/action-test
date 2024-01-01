@@ -1,8 +1,8 @@
 name: pre-build
-on: pull_request
+on: push
 
 jobs:
-    test:
+    job1:
         name: Build
         runs-on: ubuntu-latest
         steps:
@@ -15,14 +15,16 @@ jobs:
                 node-version: 18
             - name: check Result
               run: ls -lah
-
-    install_dependecies:
-      runs-on: ubuntu-latest
+    job2:
       name: Install Dependencies
-      needs: test
+      runs-on: ubuntu-latest
+      needs: job1
       steps:
-           - name: install
-             run: |
+          - name: Checkout
+            uses: actions/checkout@v3   
+          - name: install
+            run: |
+              echo "***Job-2:"
               ls -lah
               npm i -ci
 

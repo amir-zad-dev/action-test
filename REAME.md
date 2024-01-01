@@ -1,4 +1,4 @@
 # Github Actions Test
 
 ## Test
-Yes
+Yes | No
