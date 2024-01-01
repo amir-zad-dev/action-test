@@ -24,8 +24,8 @@ jobs:
             - name: Prepare Artifact
               run: |
                 mkdir app-code
-                mv -r ./node-modules ./app-code
-                mv -r ./dist ./app-code
+                mv ./node-modules ./app-code
+                mv ./dist ./app-code
                 ls -lah
                 ls ./app-code -lah
             
