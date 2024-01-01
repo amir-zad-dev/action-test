@@ -19,8 +19,20 @@ jobs:
             
             - name: Compile
               run: |
-                ls -lah
                 npm run compile
+            
+            - name: Prepare Artifact
+              run: |
+                mkdir app-code
+                mv -r ./node-modules ./app-code
+                mv -r ./dist ./app-code
                 ls -lah
+                ls ./app-code -lah
+            
+            # - name: Upload Artifacts
+            #   uses: actions/upload-artifact@v4
+            #   with:
+            #     name: app-executable
+            #     path: path/to/artifact/content/
 
     
