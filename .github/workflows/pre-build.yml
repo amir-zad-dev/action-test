@@ -18,6 +18,9 @@ jobs:
               run: npm ci
             
             - name: Compile
-              run: npm run compile
+              run: |
+                ls -lah
+                npm run compile
+                ls -lah
 
     
